@@ -1,10 +1,24 @@
 package com.example.we_sport;
 
+import com.example.we_sport.Entity.seance;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class BoardController {
+import java.net.URL;
+import java.sql.Time;
+import java.util.Date;
+import java.util.ResourceBundle;
 
+public class BoardController  {
+
+    @FXML
+    private TableView<seance> tableView;
     @FXML
     private Label userEmailLabel;
 
@@ -12,6 +26,7 @@ public class BoardController {
     public void setUserEmail(String userEmail) {
         userEmailLabel.setText("Welcome " + userEmail);
     }
+
     @FXML
     private void handleDeconnexion() {
         // Implement your logout logic here
@@ -19,6 +34,5 @@ public class BoardController {
         wesport.getInstance().loadPage("page d'accueil.fxml");
     }
 
-    // Vous pouvez ajouter d'autres méthodes et de la logique ici
 
 }

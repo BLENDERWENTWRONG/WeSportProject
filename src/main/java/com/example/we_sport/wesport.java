@@ -18,7 +18,7 @@ public class wesport extends Application {
         this.primaryStage = primaryStage;
 
         // Load the initial FXML file for the main scene
-        loadPage("page d'accueil.fxml");
+        loadPage("board.fxml");
     }
 
     public void loadPage(String fxmlFileName) {

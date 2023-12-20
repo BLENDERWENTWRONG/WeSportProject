@@ -1,23 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.layout.Region?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.we_sport.BoardController">
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.we_sport.BoardController">
 
-    <!-- Barre de navigation -->
     <HBox>
-        <Label text="We Sport"/>
-        <Region HBox.hgrow="ALWAYS"/>
-        <Label fx:id="userEmailLabel"/>
-        <Button text="Déconnexion" onAction="#handleDeconnexion"/>
+        <Region HBox.hgrow="NEVER" />
+        <Label alignment="TOP_LEFT" style="-fx-font-weight: bold; -fx-font-size: 16px;" text="We Sport" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="userEmailLabel" alignment="CENTER" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleDeconnexion" text="Déconnexion" />
     </HBox>
 
+    <VBox style="-fx-padding: 10px 0 0 0;">
+        <!-- Table View -->
+        <TableView fx:id="tableView" prefWidth="727.0">
+            <columns>
+                <TableColumn prefWidth="100" text="Seance ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="seanceID" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="100" text="Entraîneur ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="entraineurID" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Ajoutez plus de colonnes au besoin -->
+
+                <TableColumn prefWidth="100" text="Date Séance">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="date_seance" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="100" text="Horaire Séance">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="horaire_seance" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="125" text="Description Séance">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description_seance" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="100" text="Lieu">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lieu" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <!-- Ajoutez une colonne de bouton -->
+                <TableColumn prefWidth="75" text="Action">
+                    <cellFactory>
+                        <PropertyValueFactory property="seanceID" />
+
+                    </cellFactory>
+                </TableColumn>
+
+            </columns>
+
+            <!-- Set a custom placeholder message -->
+            <placeholder>
+                <Label text="Aucune séance disponible pour le moment." />
+            </placeholder>
+        </TableView>
+    </VBox>
     <!-- Le reste de votre contenu de tableau de bord peut être ajouté ici -->
 
 </VBox>
