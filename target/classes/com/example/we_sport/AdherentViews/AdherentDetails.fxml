@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.we_sport.controllers.AdherentDetailsController">
+
+    <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <Label fx:id="idLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+    <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Label fx:id="nomLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Prenom:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label fx:id="prenomLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Label text="" GridPane.rowIndex="3" />
+
+
+
+</GridPane>

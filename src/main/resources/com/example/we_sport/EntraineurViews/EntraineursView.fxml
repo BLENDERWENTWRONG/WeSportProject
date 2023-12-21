@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.we_sport.controllers.EntraineurApp">
+
+    <TextField fx:id="searchField" promptText="Search by name" />
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="entraineurID" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nomColumn" text="Nom">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nom" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="prenomColumn" text="Prenom">
+                <cellValueFactory>
+                    <PropertyValueFactory property="prenom" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="emailColumn" text="Email">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="telephoneColumn" text="Telephone">
+                <cellValueFactory>
+                    <PropertyValueFactory property="telephone" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="specialiteColumn" text="Specialite">
+                <cellValueFactory>
+                    <PropertyValueFactory property="specialite" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="actionColumn" text="Action">
+            </TableColumn>
+         <TableColumn fx:id="specialiteColumn1" text="Specialite">
+            <cellValueFactory>
+               <PropertyValueFactory property="specialite" />
+            </cellValueFactory>
+         </TableColumn>
+        </columns>
+    </TableView>
+
+</VBox>

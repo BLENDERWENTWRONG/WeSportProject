@@ -1,0 +1,23 @@
+<!-- EntraineurDetails.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.we_sport.controllers.EntraineurDetailsController">
+
+    <Label fx:id="idLabel" />
+    <Label fx:id="nomLabel" />
+    <Label fx:id="prenomLabel" />
+    <Label fx:id="emailLabel" />
+    <Label fx:id="telephoneLabel" />
+    <Label fx:id="specialiteLabel" />
+
+
+    <Label fx:id="verificationStatusLabel" />
+    <Button fx:id="verificationStatusButton" onAction="#activateAccount" />
+
+</VBox>

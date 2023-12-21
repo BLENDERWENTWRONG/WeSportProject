@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.we_sport.controllers.AdherentApp">
+
+    <children>
+        <TextField fx:id="searchField" promptText="Search by name" />
+        <TableView fx:id="tableView">
+            <columns>
+                <TableColumn text="ID" fx:id="idColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="adherentID" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Nom" fx:id="nomColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="nom" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Prenom" fx:id="prenomColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="prenom" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Email" fx:id="emailColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Telephone" fx:id="telephoneColumn">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="telephone" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Action" fx:id="actionColumn">
+                </TableColumn>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

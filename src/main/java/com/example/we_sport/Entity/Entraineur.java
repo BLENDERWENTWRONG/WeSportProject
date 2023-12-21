@@ -9,6 +9,8 @@ public class Entraineur {
     private String telephone;
     private String specialite;
 
+    private Boolean verified;
+
 
     public Entraineur() {
     }
@@ -21,6 +23,11 @@ public class Entraineur {
         this.motDePasse = motDePasse;
         this.telephone = telephone;
         this.specialite = specialite;
+        this.verified = verified;
+
+    }
+
+    public Entraineur(int entraineurID, String nom, String prenom, String email, String motDePasse, String telephone, String specialite, boolean verified) {
     }
 
     public int getEntraineurID() {
@@ -29,6 +36,14 @@ public class Entraineur {
 
     public void setEntraineurID(int entraineurID) {
         this.entraineurID = entraineurID;
+    }
+
+    public Boolean getVerified() {
+        return verified;
+    }
+
+    public void setVerified(Boolean verified) {
+        this.verified = verified;
     }
 
     public String getNom() {
