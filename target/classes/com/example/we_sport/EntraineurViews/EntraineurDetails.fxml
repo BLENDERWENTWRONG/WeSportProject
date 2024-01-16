@@ -1,23 +1,39 @@
-<!-- EntraineurDetails.fxml -->
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.we_sport.controllers.EntraineurDetailsController">
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 
-    <Label fx:id="idLabel" />
-    <Label fx:id="nomLabel" />
-    <Label fx:id="prenomLabel" />
-    <Label fx:id="emailLabel" />
-    <Label fx:id="telephoneLabel" />
-    <Label fx:id="specialiteLabel" />
-
-
-    <Label fx:id="verificationStatusLabel" />
-    <Button fx:id="verificationStatusButton" onAction="#activateAccount" />
-
+<VBox fx:id="entraineurBOX" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.we_sport.controllers.EntraineurDetailsController">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+      <Label layoutX="23.0" layoutY="39.0" prefHeight="30.0" prefWidth="90.0" text="Nom complét:" />
+      <Label layoutX="23.0" layoutY="153.0" prefHeight="30.0" prefWidth="80.0" text="Numéro:" />
+      <SplitPane layoutX="270.0" prefHeight="400.0" prefWidth="333.0">
+         <AnchorPane fx:id="anchorPane">
+            <Button fx:id="confirm" layoutX="168.0" layoutY="353.0" mnemonicParsing="false" onAction="#confirmModification" text="Confirmer Modification" />
+            <Button fx:id="verificationStatusButton" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#activateAccount" prefHeight="30.0" prefWidth="130.0" text="Changer Status" />
+            <TableView fx:id="certificatTable" layoutX="11.0" layoutY="168.0" prefHeight="150.0" prefWidth="310.0" />
+            <BorderPane fx:id="mapBorder" layoutX="11.0" layoutY="14.0" prefHeight="150.0" prefWidth="310.0" />
+         </AnchorPane>
+      </SplitPane>
+      <Label layoutX="23.0" layoutY="115.0" prefHeight="30.0" prefWidth="80.0" text="Addresse:" />
+      <Label layoutX="23.0" layoutY="78.0" prefHeight="30.0" prefWidth="80.0" text="Email:" />
+      <Label layoutX="23.0" layoutY="193.0" prefHeight="30.0" prefWidth="101.0" text="Date Naissance:" />
+      <Line endX="100.0" layoutX="139.0" layoutY="248.0" startX="-100.0" />
+      <Label layoutX="23.0" layoutY="248.0" prefHeight="30.0" prefWidth="101.0" text="Spécialite:" />
+      <TextField fx:id="nomPrenom" editable="false" layoutX="114.0" layoutY="42.0" />
+      <TextField fx:id="email" editable="false" layoutX="74.0" layoutY="81.0" />
+      <TextField fx:id="addresse" editable="false" layoutX="90.0" layoutY="118.0" />
+      <TextField fx:id="numéro" editable="false" layoutX="91.0" layoutY="158.0" />
+      <TextField fx:id="dateNaissance" editable="false" layoutX="125.0" layoutY="196.0" prefHeight="26.0" prefWidth="130.0" />
+      <TextField fx:id="spécialité" editable="false" layoutX="92.0" layoutY="253.0" />
+      <Label layoutX="23.0" layoutY="320.0" text="Status d'activation :" />
+      <TextField fx:id="verificationStatusLabel" editable="false" layoutX="150.0" layoutY="316.0" prefHeight="26.0" prefWidth="90.0" />
+   </AnchorPane>
 </VBox>

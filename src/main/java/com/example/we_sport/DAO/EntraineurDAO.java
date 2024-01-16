@@ -2,6 +2,7 @@ package com.example.we_sport.DAO;
 
 import com.example.we_sport.DatabaseConnector;
 import com.example.we_sport.Entity.Entraineur;
+import com.example.we_sport.controllers.EntraineurApp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,9 +10,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EntraineurDAO {
 
+    Logger logger ;
+
+
+    public Entraineur getEntraineur(int entraineurID) {
+        Entraineur entraineur = null;
+        try (Connection connection = DatabaseConnector.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM entraineurs WHERE  entraineurID=?")) {
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                entraineur = mapResultSetToEntraineur(resultSet);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return entraineur;
+    }
     public void addEntraineur(Entraineur entraineur) {
         try (Connection connection = DatabaseConnector.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
@@ -61,24 +85,26 @@ public class EntraineurDAO {
         return entraineurs;
     }
 
-    public void updateEntraineur(Entraineur entraineur) {
-        try (Connection connection = DatabaseConnector.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(
-                     "UPDATE entraineurs SET nom=?, prenom=?, email=?, motDePasse=?, telephone=?, specialite=? WHERE entraineurID=?")) {
+    public boolean updateEntraineur(Entraineur entraineur) {
+        if(getEntraineur(entraineur.getEntraineurID())!=null) {
+            try (Connection connection = DatabaseConnector.getConnection();
+                 PreparedStatement preparedStatement = connection.prepareStatement(
+                         "UPDATE entraineurs SET nom=?, prenom=?, email=?, motDePasse=?, telephone=?, specialite=? WHERE entraineurID=?")) {
 
-            preparedStatement.setString(1, entraineur.getNom());
-            preparedStatement.setString(2, entraineur.getPrenom());
-            preparedStatement.setString(3, entraineur.getEmail());
-            preparedStatement.setString(4, entraineur.getMotDePasse());
-            preparedStatement.setString(5, entraineur.getTelephone());
-            preparedStatement.setString(6, entraineur.getSpecialite());
-            preparedStatement.setInt(7, entraineur.getEntraineurID());
-
-            preparedStatement.executeUpdate();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+                preparedStatement.setString(1, entraineur.getNom());
+                preparedStatement.setString(2, entraineur.getPrenom());
+                preparedStatement.setString(3, entraineur.getEmail());
+                preparedStatement.setString(4, entraineur.getMotDePasse());
+                preparedStatement.setString(5, entraineur.getTelephone());
+                preparedStatement.setString(6, entraineur.getSpecialite());
+                preparedStatement.setInt(7, entraineur.getEntraineurID());
+                preparedStatement.executeUpdate();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+        return false;
     }
 
 

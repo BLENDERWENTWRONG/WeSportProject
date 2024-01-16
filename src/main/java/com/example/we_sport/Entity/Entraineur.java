@@ -7,6 +7,9 @@ public class Entraineur {
     private String email;
     private String motDePasse;
     private String telephone;
+
+
+    private String addresse;
     private String specialite;
 
     private Boolean verified;
@@ -95,6 +98,14 @@ public class Entraineur {
     }
 
 
+
+    public String getAddresse() {
+        return addresse;
+    }
+
+    public void setAddresse(String addresse) {
+        this.addresse = addresse;
+    }
     @Override
     public String toString() {
         return "Entraineur{" +

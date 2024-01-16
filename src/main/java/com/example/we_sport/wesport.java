@@ -1,5 +1,6 @@
 package com.example.we_sport;
 
+import com.example.we_sport.utils.GeoApi;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,12 +12,14 @@ import java.io.IOException;
 public class wesport extends Application {
     private static wesport instance;
     private Stage primaryStage;
-
+    private GeoApi geoApi;
     @Override
     public void start(Stage primaryStage) throws IOException {
         instance = this;
         this.primaryStage = primaryStage;
-        loadPage("AdherentViews/Adherent.fxml");
+        GeoApi.getInfosFromCity();
+//        loadPage("AdherentViews/AdherentDetails.fxml");
+        loadPage("EntraineurViews/EntraineurDetails.fxml");
     }
 
     public void loadPage(String fxmlFileName) {

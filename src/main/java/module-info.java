@@ -7,6 +7,9 @@ module com.example.we_sport {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires PDFViewerFX;
+    requires com.gluonhq.attach.util;
+    requires com.gluonhq.maps;
 
 
     opens com.example.we_sport.controllers to javafx.fxml;

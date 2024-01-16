@@ -119,4 +119,30 @@ public class AdherentDAO {
         }
         return 0.0;
     }
+    public double getAdherentData() {
+        try (Connection connection = DatabaseConnector.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT birthdate FROM adherents");
+             ResultSet resultSet = preparedStatement.executeQuery()) {
+
+            LocalDate currentDate = LocalDate.now();
+            int totalAge = 0;
+            int adherentCount = 0;
+
+            while (resultSet.next()) {
+                LocalDate birthdate = resultSet.getDate("birthdate").toLocalDate();
+                int age = Period.between(birthdate, currentDate).getYears();
+
+                totalAge += age;
+                adherentCount++;
+            }
+
+            if (adherentCount > 0) {
+                return (double) totalAge / adherentCount;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
+    }
 }

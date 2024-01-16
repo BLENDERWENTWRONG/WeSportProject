@@ -7,8 +7,18 @@ public class Adherent {
     private String nom;
     private String prenom;
     private String email;
+
+    public String getAdherentAdresse() {
+        return Adresse;
+    }
+
+    public void setAdherenAdresse(String adresse) {
+        Adresse = adresse;
+    }
+
     private String motDePasse;
     private String telephone;
+    private String Adresse;
 
 
     public Adherent() {
