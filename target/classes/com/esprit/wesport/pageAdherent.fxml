@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+
+            prefHeight="400.0" prefWidth="600.0">
+    <!--            fx:controller="com.esprit.wesport.Controllers.cardActiviteController"-->
+        <HBox style="-fx-background-color: #F6F4EB; -fx-padding: 10px;" alignment="CENTER">
+            <!-- Image -->
+            <ImageView>
+                <image>
+                    <Image url="@Views/test.png" />
+                </image>
+                <fitWidth>280</fitWidth>
+                <fitHeight>80</fitHeight>
+            </ImageView>
+        </HBox>
+
+
+        <HBox style="-fx-background-color: rgba(26,26,26,0.94); -fx-padding: 5px;" alignment="CENTER">
+        </HBox>
+
+        <VBox style="-fx-padding: 10px;  -fx-background-color: rgba(255,255,255,0.6); " alignment="CENTER">
+
+        <Label style="-fx-text-fill: #1e1e1e; -fx-font-size: 21px; -fx-font-weight: bold;" text="NOS ACTIVITÉS"/>
+
+            <VBox fx:id="mainVBox" spacing="10" alignment="CENTER"/>
+
+        </VBox>
+
+    </AnchorPane>

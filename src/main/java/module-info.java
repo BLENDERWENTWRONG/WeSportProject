@@ -1,28 +1,24 @@
-module com.example.we_sport {
+module com.example.cafe {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.web;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
+    requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+
     requires java.sql;
-    requires PDFViewerFX;
-    requires com.gluonhq.attach.util;
-    requires com.gluonhq.maps;
 
 
-    opens com.example.we_sport.controllers to javafx.fxml;
 
-    exports com.example.we_sport;
-    exports com.example.we_sport.Entity;
-
-    opens com.example.we_sport to javafx.fxml;
-
+    opens com.esprit.wesport to javafx.fxml;
+    exports com.esprit.wesport;
+    exports com.esprit.wesport.Entity;
+    opens com.esprit.wesport.Entity to javafx.fxml;
+    exports com.esprit.wesport.Controllers;
+    opens com.esprit.wesport.Controllers to javafx.fxml;
+    exports com.esprit.wesport.Utils;
+    opens com.esprit.wesport.Utils to javafx.fxml;
 }
-
-
-
-
-
-
