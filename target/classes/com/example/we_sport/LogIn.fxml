@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <?import javafx.geometry.Insets?>
+  <?import javafx.scene.control.Button?>
+  <?import javafx.scene.control.Label?>
+  <?import javafx.scene.control.PasswordField?>
+  <?import javafx.scene.control.TextField?>
+  <?import javafx.scene.control.Hyperlink?>
+  <?import javafx.scene.layout.HBox?>
+  <?import javafx.scene.layout.VBox?>
+
+  <?import javafx.scene.image.Image?>
+  <?import javafx.scene.image.ImageView?>
+  <VBox xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.example.we_sport.Controllers.LoginPageController"
+        style="-fx-background-color: #F6F4EB; -fx-padding: 50px;">
+
+    <HBox style="-fx-background-color: #F6F4EB; -fx-padding: 10px;" alignment="CENTER">
+      <!-- Image -->
+      <ImageView>
+        <image>
+          <Image url="@Image/test.png" />
+        </image>
+        <fitWidth>200</fitWidth>
+        <fitHeight>80</fitHeight>
+      </ImageView>
+    </HBox>
+
+    <Label style="-fx-text-fill: #000; -fx-font-size: 24px; -fx-margin-bottom: 20px;" text="Connexion"/>
+  <HBox style=" -fx-alignment: CENTER_RIGHT">
+    <Hyperlink text="Home" onAction="#goToHome"/>
+  </HBox>
+    <VBox spacing="10" style="-fx-border-color: #000; -fx-border-width: 2px; -fx-border-radius: 5px; -fx-padding: 15px;">
+      <TextField fx:id="emailField" style="-fx-text-fill: #000;" promptText="Nom d'utilisateur"/>
+
+
+      <PasswordField fx:id="passwordField" style="-fx-text-fill: #000;" promptText="Password" />
+
+
+
+      <Button style="-fx-text-fill: #000000; -fx-font-size: 14px;" onAction="#loginUser" text="Se connecter"/>
+
+    <HBox style="-fx-margin-top: 20px;">
+      <Hyperlink text="Don't have an account?" onAction="#goToSignUp"/>
+    </HBox>
+    </VBox>
+    <!-- Footer -->
+    <VBox style="-fx-background-color: #F6F4EB; -fx-padding: 10px; -fx-margin-top: 20px;" alignment="CENTER">
+      <Label style="-fx-text-fill: #000; -fx-font-size: 14px;" text="© 2024 We Sport. Tous droits réservés."/>
+      <Label style="-fx-text-fill: #000; -fx-font-size: 14px;" text="Contactez-nous : contact@wesport.com"/>
+      <Label style="-fx-text-fill: #000; -fx-font-size: 14px;" text="Adresse : 123, Rue de Sport, Ville"/>
+    </VBox>
+
+
+
+  </VBox>

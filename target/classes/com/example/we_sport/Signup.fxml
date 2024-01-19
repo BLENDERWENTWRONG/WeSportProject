@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.DropShadow?>
+<VBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.we_sport.Controllers.RegistrationFormController"
+      style="-fx-background-color: #F6F4EB; -fx-padding: 50px;">
+
+    <HBox style="-fx-background-color: #F6F4EB; -fx-padding: 10px;" alignment="CENTER">
+        <!-- Image -->
+        <ImageView>
+            <image>
+                <Image url="@Image/test.png" />
+            </image>
+            <fitWidth>280</fitWidth>
+            <fitHeight>80</fitHeight>
+        </ImageView>
+    </HBox>
+    <HBox style=" -fx-alignment: CENTER_RIGHT">
+        <Hyperlink text="Home" onAction="#goToHome"/>
+    </HBox>
+    <children>
+        <Label text="Registration Form" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #000; -fx-font-family: 'Arial';">
+
+            <VBox.margin>
+                <Insets left="20.0" />
+            </VBox.margin>
+        </Label>
+
+        <VBox spacing="10" >
+            <Label text="Nom*" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <TextField fx:id="nomField" promptText="Enter your last name" style="-fx-font-size: 14; -fx-background-color: #666; -fx-text-fill: #fff;" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Prenom*" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <TextField fx:id="prenomField" promptText="Enter your first name" style="-fx-font-size: 14; -fx-background-color: #666; -fx-text-fill: #fff;" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Email*" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <TextField fx:id="emailField" promptText="Enter your email" style="-fx-font-size: 14; -fx-background-color: #666; -fx-text-fill: #fff;" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Mot de passe*" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <PasswordField fx:id="motDePasseField" promptText="Enter your password" style="-fx-font-size: 14; -fx-background-color: #666; -fx-text-fill: #fff;" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Telephone*" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <TextField fx:id="telephoneField" promptText="Enter your phone number" style="-fx-font-size: 14; -fx-background-color: #666; -fx-text-fill: #fff;" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Adresse*" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <TextField fx:id="adresseField" promptText="Enter your address" style="-fx-font-size: 14; -fx-background-color: #666; -fx-text-fill: #fff;" VBox.vgrow="ALWAYS" />
+        </VBox>
+
+        <VBox style="-fx-margin-bottom: 20px;">
+
+        <HBox alignment="CENTER" spacing="10">
+            <CheckBox onAction="#contrôle" fx:id="adherentCheckBox" text="Adherent" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+            <CheckBox onAction="#contrôle" fx:id="entraineurCheckBox" text="Entraineur" style="-fx-font-size: 14; -fx-text-fill: #000;"/>
+        </HBox>
+        </VBox>
+
+        <Button text="Register" onAction="#registerUser" style="-fx-font-size: 16; -fx-background-color: #4CAF50; -fx-text-fill: white;">
+            <VBox.margin>
+                <Insets left="15.0" right="15.0" top="20.0" />
+            </VBox.margin>
+        </Button>
+
+        <Hyperlink text="LogIn" onAction="#goToLogin" style="-fx-text-fill: #2196f3;">
+            <VBox.margin>
+                <Insets left="15.0" right="15.0"  />
+            </VBox.margin>
+        </Hyperlink>
+
+        <Label text="Note: All fields (*) are required" style="-fx-text-fill: #808080; -fx-font-size: 12;">
+            <VBox.margin>
+                <Insets left="20.0" top="10.0" />
+            </VBox.margin>
+        </Label>
+
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 20px;">
+            <Label text="© 2024 We Sport. Tous droits réservés." style="-fx-text-fill: #fff; -fx-font-size: 14px;"/>
+            <Label text="Contactez-nous : contact@wesport.com" style="-fx-text-fill: #fff; -fx-font-size: 14px;"/>
+            <Label text="Adresse : 123, Rue de Sport, Ville" style="-fx-text-fill: #fff; -fx-font-size: 14px;"/>
+        </HBox>
+    </children>
+</VBox>
